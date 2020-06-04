@@ -24,15 +24,6 @@ app.use('/api/1.0', servicesRouter);
 app.use('/api/1.0', userRouter);
 app.use('/service', service);
 
-//codigo
-var service = require('./routes/service'); 
-app.use('/service', service); 
-
-const port = 8000; 
-app.listen(port, () =>{ 
-console.log("Corriendo en el puerto " + port) 
-}); 
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

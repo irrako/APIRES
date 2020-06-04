@@ -41,10 +41,7 @@ app.use(function(err, req, res, next) {
 });
 var port = 8000;
 const port = 8000;
-app.listen(port, () =>{
-console.log("Corriendo en el puerto " + port)
-});
 app.listen(port, () => {
-  console.log("Corriendo " + port);
+console.log("Corriendo en el puerto " + port)
 });
 module.exports = app;

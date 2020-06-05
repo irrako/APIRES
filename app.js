@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/1.0', servicesRouter);
 app.use('/api/1.0', userRouter);
 
-/* aqui codigo */
+/* codigo */
 var service = require('./routes/service'); 
 app.use('/service', service); 
 

@@ -6,7 +6,6 @@ var logger = require('morgan');
 
 var servicesRouter = require('./routes/services');
 var userRouter = require('./routes/user');
-var service = require('./routes/service');
 
 var app = express();
 
@@ -22,7 +21,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/1.0', servicesRouter);
 app.use('/api/1.0', userRouter);
-app.use('/service', service);
+
+/* aqui codigo */
+var service = require('./routes/service'); 
+app.use('/service', service); 
+
+const port = 8000; 
+app.listen(port, () =>{ 
+console.log("Corriendo en el puerto " + port); 
+}); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,8 +46,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-var port = 8000;
-app.listen(port, () => {
-console.log("Corriendo en el puerto " + port);
-});
+//var port = 8000;
+//app.listen(port, () => {
+//console.log("Corriendo" + port);
+//});
 module.exports = app;

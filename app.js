@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var servicesRouter = require('./routes/services');
 var userRouter = require('./routes/user');
+var service = require('./routes/service'); 
 
 var app = express();
 
@@ -21,9 +22,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/1.0', servicesRouter);
 app.use('/api/1.0', userRouter);
-
-/* codigo */
-var service = require('./routes/service'); 
 app.use('/service', service); 
 
 const port = 8000; 

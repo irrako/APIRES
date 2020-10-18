@@ -1,12 +1,12 @@
 var mongoose = require("./connect");
 var USERSCHEMA = new mongoose.Schema({
-    nick: {
+    foto: {
         type: String,
-        required: [true, "El nickname es necesario"]
+        required: [true, "Imagen"]
     },
-    age: {
-        type: Number,
-        required: [true, "La edad es necesaria"]
+    nombre: {
+        type: String,
+        required: [true, "Completo"]
     },
     email: {
         type: String,
@@ -36,18 +36,7 @@ var USERSCHEMA = new mongoose.Schema({
            message: props => `${props.value} El password necesata 1 mayuscula y un caracter especial`
         }
     },
-    roles: {
-        type: Array,
-        default: []
-    },
-    playlist: {
-        type: Array,
-        default: []
-    },
-    create: {
-        type: Date,
-        default: new Date()
-    }
+    
 });
 var USER = mongoose.model("user", USERSCHEMA);
 module.exports = USER;

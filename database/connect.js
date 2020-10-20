@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://172.22.0.2:27017/usuariodatabase", {useNewUrlParser: true});
+mongoose.connect("mongodb://172.29.0.2:27017/usuariodatabase", {useNewUrlParser: true});
 var db  = mongoose.connection;
 db.on("error", () => {
     console.log("ERRO no se puede conectar al servidor");
